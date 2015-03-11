@@ -1,6 +1,6 @@
 <?php
 
-use Contact;
+//use Contact;
 
 require_once 'model/ContactsService.php';
 
@@ -85,10 +85,15 @@ class ContactsController {
         $contact = $this->contactsService->getContact($id);
 
         if (isset($_POST['form-submitted'])) {
+            $name = isset($_POST['name']) ? $_POST['name'] : NULL;
+            $phone = isset($_POST['phone']) ? $_POST['phone'] : NULL;
+            $email = isset($_POST['email']) ? $_POST['email'] : NULL;
+            $address = isset($_POST['address']) ? $_POST['address'] : NULL;
+
             try {
-                $this->contactsService->updateContact($id, $contact->name, $contact->phone, $contact->email, $contact->address);
-//                $this->redirect('index.php?op=show&id=' . $id);
-//                return;
+                $this->contactsService->updateContact($id, $name, $phone, $email, $address);
+                $this->redirect('index.php?op=show&id=' . $id);
+                return;
             } catch (ValidationException $e) {
                 $errors = $e->getErrors();
             }

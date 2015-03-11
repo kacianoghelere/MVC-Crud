@@ -14,10 +14,10 @@
     <body>
         <div class="panel panel-primary" style="width: 400px; margin: 0 auto; margin-top: 20px;">
             <div class="panel-heading">
-                <h3 class="panel-title">Editing <?php print $contact->id . '-' . $contact->name;  ?></h3>
+                <h3 class="panel-title">Editing <?php print $contact->id . ' - ' . $contact->name;  ?></h3>
             </div>
             <div class="panel-body">
-                <form id="form_reg" name="form_edit" method="POST" class="form-horizontal" style="padding-right: 10px; padding-left: 10px;">
+                <form id="form_edit" name="form_edit" method="POST" class="form-horizontal" style="padding-right: 10px; padding-left: 10px;">
 
                     <div class="form-group">
                         <label for="name" class="control-label">Name:</label>
